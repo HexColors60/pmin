@@ -1,0 +1,16 @@
+// Workaround due to I don't know how to parse arguments correctly.
+
+// FAIL
+// set APPDATA="R:\appdata"
+// set LOCALAPPDATA="R:\appdata"
+
+// R: is ImDisk ramdisk.
+// Edit main/main.js
+// Put after arg === '-v' 
+// Ref: https://github.com/electron/electron/issues/24536
+// Ref: https://github.com/beekeeper-studio/beekeeper-studio/issues/841
+if (process.platform === 'win32') {
+  app.setPath('appData', "R:/app");
+  app.setPath('userData', "R:/app/min");
+  app.setAppLogsPath("R:/app/min/logs");
+}
