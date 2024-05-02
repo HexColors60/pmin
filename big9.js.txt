@@ -1,0 +1,28 @@
+// big9.js.txt
+// R:\min\userscripts>type big9.js
+// Put this javascript in the ramdisk.
+// It works as StyleBot in Chrome.
+// It makes sone fonts bigger, some button bigger, and some AD hidden.
+// ==UserScript==
+// @name big8
+// @match *
+// @run-at document-start
+// ==/UserScript==
+var style = document.createElement('style')
+
+style.textContent = `
+.euXnkb {
+  font-size: 20px !important;
+}
+.bXsPMj {
+  width: 60px !important;
+  height: 60px !important;
+}
+.iZGnyc {
+  animation: none !important;
+  width: 0px !important;
+  height: 0px !important;
+  visibility: hidden;
+}
+`
+document.body.appendChild(style)
